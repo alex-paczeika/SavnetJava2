@@ -5,7 +5,7 @@ public class JavaFolders {
     static int numberOfLines = 0;
     static int numberOfFolders = 0;
     static int numberOfFiles = 0;
-
+	static int accessSpecifiersCount=0;
     public static void main(String[] args) throws IOException {
 
 
@@ -52,6 +52,9 @@ public class JavaFolders {
             if (s.trim().isEmpty()) {
                 numberOfLines--;
             }
+            if (s.contains("public") || s.contains("private") || s.contains("protected")) {
+				accessSpecifiersCount++;
+			}
             numberOfLines++;
 
 
