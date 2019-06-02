@@ -5,8 +5,8 @@ public class Submarine extends  Army{
     String nume;
     int nrDeTorpile;
 
-    public Submarine(int firepower, String nume, int nrDeTorpile) {
-        super(firepower=nrDeTorpile*500);
+    public Submarine(String nume, int nrDeTorpile) {
+
         this.nume = nume;
         this.nrDeTorpile = nrDeTorpile;
     }
@@ -16,7 +16,12 @@ public class Submarine extends  Army{
         return "Submarine{" +
                 "nume='" + nume + '\'' +
                 ", nrDeTorpile=" + nrDeTorpile +
-                ", firepower=" + firepower +
+
                 '}';
+    }
+
+    @Override
+    public int getFirepower() {
+        return nrDeTorpile*500;
     }
 }

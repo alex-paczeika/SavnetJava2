@@ -12,16 +12,20 @@ public class Tancuri  extends  Army{
                 "nume='" + nume + '\'' +
                 ", nrDeProiectile=" + nrDeProiectile +
                 ", nrDeGloante=" + nrDeGloante +
-                ", firepower=" + firepower +
+
                 '}';
     }
 
-    public Tancuri(int firepower, String nume, int nrDeProiectile, int nrDeGloante) {
-        super(firepower=nrDeProiectile*50+nrDeGloante);
+    public Tancuri( String nume, int nrDeProiectile, int nrDeGloante) {
+
         this.nume = nume;
         this.nrDeProiectile = nrDeProiectile;
         this.nrDeGloante = nrDeGloante;
     }
 
 
+    @Override
+    public int getFirepower() {
+        return nrDeProiectile * 50 + nrDeGloante;
+    }
 }

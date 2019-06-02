@@ -2,13 +2,11 @@ package DataAccesPackage;
 
 import Model.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class FakeDAO {
-
+    static ArrayList<Army> arm1 = new ArrayList<Army>();
+    static ArrayList<Army> arm2 = new ArrayList<Army>();
 
     public static Comparator<Army> StuRollno = new Comparator<Army>() {
 
@@ -26,50 +24,78 @@ public class FakeDAO {
 
     public static void main(String[] args) {
 
-                Army[] army1 = {new Soldati(10, "Trupa1"),
-                new Tancuri(20, "TrupaTancuri1", 3, 5),
-                new NaveDeRazboi(30, "TrupaNave1", 12, 15),
-                new Submarine(25, "TrupaSubmarine1", 14),
-                new AvioaneDeLupta(50, "TrupaAvioane1", 19, 10)};
+//
 
 
-        int sum=0;
-
-        ArrayList<Army> arm1 = new ArrayList<Army>();
-        ArrayList<Army> arm2 = new ArrayList<Army>();
 
 
-        arm1.add(new Soldati(10, "Trupa1"));
-        arm1.add(new Tancuri(20, "TrupaTancuri1", 3, 5));
-        arm1.add(new NaveDeRazboi(30, "TrupaNave1", 12, 15));
-        arm1.add(new Submarine(25, "TrupaSubmarine1", 14));
-        arm1.add(new AvioaneDeLupta(50, "TrupaAvioane1", 19, 10));
+        arm1.add(new Soldati("Trupa1"));
+        arm1.add(new Soldati("Trupa12"));
+        arm1.add(new Tancuri("TrupaTancuri1", 3, 5));
+        arm1.add(new Tancuri("TrupaTancuri12", 6, 8));
+        arm1.add(new NaveDeRazboi("TrupaNave1", 11, 15));
+        arm1.add(new NaveDeRazboi("TrupaNave12", 12, 15));
+        arm1.add(new Submarine("TrupaSubmarine1", 12));
+        arm1.add(new Submarine("TrupaSubmarine12", 14));
+        arm1.add(new AvioaneDeLupta("TrupaAvioane1", 16, 10));
+        arm1.add(new AvioaneDeLupta("TrupaAvioane12", 19, 10));
 
-        arm2.add(new Soldati(10, "Trupa2"));
-        arm2.add(new Tancuri(20, "TrupaTancuri2", 6, 2));
-        arm2.add(new NaveDeRazboi(30, "TrupaNave2", 14, 16));
-        arm2.add(new Submarine(25, "TrupaSubmarine2", 9));
-        arm2.add(new AvioaneDeLupta(50, "TrupaAvioane2", 9, 5));
+        arm2.add(new Soldati("Trupa2"));
+        arm2.add(new Soldati("Trupa21"));
+        arm2.add(new Tancuri("TrupaTancuri2", 6, 2));
+        arm2.add(new Tancuri("TrupaTancuri21", 7, 2));
+        arm2.add(new NaveDeRazboi("TrupaNave2", 14, 16));
+        arm2.add(new NaveDeRazboi("TrupaNave21", 74, 16));
+        arm2.add(new Submarine("TrupaSubmarine2", 9));
+        arm2.add(new Submarine("TrupaSubmarine21", 91));
+        arm2.add(new AvioaneDeLupta("TrupaAvioane2", 9, 5));
+        arm2.add(new AvioaneDeLupta("TrupaAvioane21", 5, 5));
 
 
+
+    }
+
+
+    public  void AfisaresiSortare()
+    {
+
+        int sum = 0;
 
         Collections.sort(arm1, StuRollno);
 
         for (Army army : arm1) {
             System.out.println(army.toString());
-           sum= army.getFirepower() + sum;
-
+            System.out.println(army.getFirepower());
+            sum = army.getFirepower() + sum;
 
 
         }
 
 
-
-
-
         System.out.println("\nSuma puterii de foc a armatei 1 este " + sum);
 
+    }
 
+
+    public  void ArmyBattle() {
+
+
+
+        int opt = 1;
+        while (opt != 0) {
+
+
+            System.out.println("1.Bataie Soldati");
+            Scanner scanner = new Scanner(System.in);
+            scanner.nextInt();
+
+            switch (opt) {
+
+                case 1:
+
+
+            }
+        }
     }
 
 

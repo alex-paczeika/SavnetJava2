@@ -6,8 +6,7 @@ public class NaveDeRazboi extends  Army{
     int nrDeTunuri;
     int nrDeRachete;
 
-    public NaveDeRazboi(int firepower, String nume, int nrDeTunuri, int nrDeRachete) {
-        super(firepower=nrDeTunuri*100+nrDeRachete*100);
+    public NaveDeRazboi(String nume, int nrDeTunuri, int nrDeRachete) {
         this.nume = nume;
         this.nrDeTunuri = nrDeTunuri;
         this.nrDeRachete = nrDeRachete;
@@ -19,7 +18,13 @@ public class NaveDeRazboi extends  Army{
                 "nume='" + nume + '\'' +
                 ", nrDeTunuri=" + nrDeTunuri +
                 ", nrDeRachete=" + nrDeRachete +
-                ", firepower=" + firepower +
+
                 '}';
+    }
+
+
+    @Override
+    public int getFirepower() {
+        return nrDeTunuri*100+nrDeRachete*100;
     }
 }

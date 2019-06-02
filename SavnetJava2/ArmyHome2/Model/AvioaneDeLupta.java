@@ -12,14 +12,18 @@ public class AvioaneDeLupta  extends  Army{
                 "nume='" + nume + '\'' +
                 ", nrDeRachete=" + nrDeRachete +
                 ", nrDeBombe=" + nrDeBombe +
-                ", firepower=" + firepower +
                 '}';
     }
 
-    public AvioaneDeLupta(int firepower, String nume, int nrDeRachete, int nrDeBombe) {
-        super(firepower=nrDeRachete*1000+nrDeBombe*2000);
+    public AvioaneDeLupta(String nume, int nrDeRachete, int nrDeBombe) {
+
         this.nume = nume;
         this.nrDeRachete = nrDeRachete;
         this.nrDeBombe = nrDeBombe;
+    }
+
+    @Override
+    public int getFirepower() {
+        return nrDeRachete*1000+nrDeBombe*2000;
     }
 }
