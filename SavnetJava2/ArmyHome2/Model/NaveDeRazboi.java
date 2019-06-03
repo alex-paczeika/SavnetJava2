@@ -14,12 +14,7 @@ public class NaveDeRazboi extends  Army{
 
     @Override
     public String toString() {
-        return "NaveDeRazboi{" +
-                "nume='" + nume + '\'' +
-                ", nrDeTunuri=" + nrDeTunuri +
-                ", nrDeRachete=" + nrDeRachete +
-
-                '}';
+        return "NaveDeRazboi : ";
     }
 
 

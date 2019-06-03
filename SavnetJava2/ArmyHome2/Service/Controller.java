@@ -11,9 +11,9 @@ public class Controller {
 
        FakeDAO fakeDAO = new FakeDAO();
 
-
-       fakeDAO.AfisaresiSortare();
-       fakeDAO.ArmyBattle();
+fakeDAO.BazadeDate();
+      fakeDAO.AfisaresiSortare();
+      fakeDAO.ArmyBattle();
 
     }
 

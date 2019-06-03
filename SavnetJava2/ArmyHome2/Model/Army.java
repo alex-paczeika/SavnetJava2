@@ -7,8 +7,6 @@ public abstract class Army {
 
 
 
-
-
     public abstract int getFirepower();
 
 }

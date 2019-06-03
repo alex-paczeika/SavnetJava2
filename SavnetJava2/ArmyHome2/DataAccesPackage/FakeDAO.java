@@ -2,6 +2,7 @@ package DataAccesPackage;
 
 import Model.*;
 
+
 import java.util.*;
 
 public class FakeDAO {
@@ -22,11 +23,7 @@ public class FakeDAO {
         }
     };
 
-    public static void main(String[] args) {
-
-//
-
-
+    public void BazadeDate() {
 
 
         arm1.add(new Soldati("Trupa1"));
@@ -39,6 +36,7 @@ public class FakeDAO {
         arm1.add(new Submarine("TrupaSubmarine12", 14));
         arm1.add(new AvioaneDeLupta("TrupaAvioane1", 16, 10));
         arm1.add(new AvioaneDeLupta("TrupaAvioane12", 19, 10));
+
 
         arm2.add(new Soldati("Trupa2"));
         arm2.add(new Soldati("Trupa21"));
@@ -56,8 +54,7 @@ public class FakeDAO {
     }
 
 
-    public  void AfisaresiSortare()
-    {
+    public void AfisaresiSortare() {
 
         int sum = 0;
 
@@ -77,7 +74,77 @@ public class FakeDAO {
     }
 
 
-    public  void ArmyBattle() {
+    public void ArmyBattle() {
+
+        int sumaSoldati = 0;
+        int sumaSoldati2 = 0;
+        int sumaTancuri = 0;
+        int sumaTancuri2 = 0;
+        int sumaSubmarine = 0;
+        int sumaSubmarine2 = 0;
+
+
+
+
+        for (Army soldatArmata1 : arm1) {
+            if (soldatArmata1 instanceof Soldati) {
+                sumaSoldati = sumaSoldati + soldatArmata1.getFirepower();
+            }
+
+        }
+        System.out.println("Soldati artmata 1 firepower: " + sumaSoldati);
+
+
+
+        for (Army soldatArmata2 : arm2) {
+            if (soldatArmata2 instanceof Soldati) {
+                sumaSoldati2 = sumaSoldati2 + soldatArmata2.getFirepower();
+            }
+
+        }
+        System.out.println("Soldati artmata 2 firepower: " + sumaSoldati2);
+
+        for (Army tancuriArmata1 : arm1) {
+            if (tancuriArmata1 instanceof Tancuri) {
+                sumaTancuri = sumaTancuri + tancuriArmata1.getFirepower();
+            }
+
+        }
+        System.out.println("Tancuri artmata 1 firepower: " + sumaTancuri);
+
+
+
+
+        for (Army tancruiArmata2 : arm2) {
+            if (tancruiArmata2 instanceof Tancuri) {
+                sumaTancuri2 = sumaTancuri2 + tancruiArmata2.getFirepower();
+            }
+
+        }
+        System.out.println("Tancuri artmata 2 firepower: " + sumaTancuri2);
+
+
+        for (Army submarineArmata1 : arm1) {
+            if (submarineArmata1 instanceof Submarine) {
+                sumaSubmarine = sumaSubmarine + submarineArmata1.getFirepower();
+            }
+
+        }
+        System.out.println("Submarine artmata 1 firepower: " + sumaSubmarine);
+
+
+
+
+        for (Army submarineArmata2 : arm2) {
+            if (submarineArmata2 instanceof Tancuri) {
+                sumaSubmarine2 = sumaSubmarine2 + submarineArmata2.getFirepower();
+            }
+
+        }
+        System.out.println("Submarine artmata 2 firepower: " + sumaTancuri2);
+
+
+
 
 
 
@@ -85,18 +152,60 @@ public class FakeDAO {
         while (opt != 0) {
 
 
-            System.out.println("1.Bataie Soldati");
+            System.out.println("\n1.Bataie Soldati" +
+                    "\n2.Bataie Tancuri" +
+                    "\n3.Bataie Submarine");
             Scanner scanner = new Scanner(System.in);
-            scanner.nextInt();
+            opt = scanner.nextInt();
+
 
             switch (opt) {
 
                 case 1:
+                    System.out.println("Acum se bat soldatii ...");
+                    int random = new Random().nextInt(2);
+                    sumaSoldati = sumaSoldati - sumaSoldati2 * random;
+                    random = new Random().nextInt(2);
+                    sumaSoldati2 = sumaSoldati2 - sumaSoldati * random;
+                    System.out.println("Soldati armata 1 au ramas: " + sumaSoldati);
+                    System.out.println("Soldati armata 2 au ramas: " + sumaSoldati2);
+                    break;
+
+                case 2:
+
+                    System.out.println("Acum se bat tancurile ...");
+                     random = new Random().nextInt(2);
+                    sumaTancuri = sumaTancuri - sumaTancuri2 * random;
+                    random = new Random().nextInt(2);
+                    sumaTancuri2 = sumaTancuri2 - sumaTancuri * random;
+                    System.out.println("Tancuri armata 1 au ramas: " + sumaTancuri);
+                    System.out.println("Tancuri armata 2 au ramas: " + sumaTancuri2);
+                    break;
+
+                case 3:
+                    System.out.println("Acum se bat submarinele ...");
+                    random = new Random().nextInt(2);
+                    sumaSubmarine = sumaSubmarine - sumaSubmarine2 * random;
+                    random = new Random().nextInt(2);
+                    sumaSubmarine2 = sumaSubmarine2 - sumaSubmarine * random;
+                    System.out.println("Submarine armata 1 au ramas: " + sumaSubmarine);
+                    System.out.println("Submarine armata 2 au ramas: " + sumaSubmarine2);
+                    break;
+
+
+
+
+
+
+
+
+
 
 
             }
         }
     }
-
-
 }
+
+
+

@@ -8,11 +8,7 @@ public class AvioaneDeLupta  extends  Army{
 
     @Override
     public String toString() {
-        return "AvioaneDeLupta{" +
-                "nume='" + nume + '\'' +
-                ", nrDeRachete=" + nrDeRachete +
-                ", nrDeBombe=" + nrDeBombe +
-                '}';
+        return "AvioaneDeLupta : ";
     }
 
     public AvioaneDeLupta(String nume, int nrDeRachete, int nrDeBombe) {

@@ -8,12 +8,7 @@ public class Tancuri  extends  Army{
 
     @Override
     public String toString() {
-        return "Tancuri{" +
-                "nume='" + nume + '\'' +
-                ", nrDeProiectile=" + nrDeProiectile +
-                ", nrDeGloante=" + nrDeGloante +
-
-                '}';
+        return "Tancuri : ";
     }
 
     public Tancuri( String nume, int nrDeProiectile, int nrDeGloante) {

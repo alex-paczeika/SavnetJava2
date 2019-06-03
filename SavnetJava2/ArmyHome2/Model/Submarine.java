@@ -13,11 +13,7 @@ public class Submarine extends  Army{
 
     @Override
     public String toString() {
-        return "Submarine{" +
-                "nume='" + nume + '\'' +
-                ", nrDeTorpile=" + nrDeTorpile +
-
-                '}';
+        return "Submarine : ";
     }
 
     @Override

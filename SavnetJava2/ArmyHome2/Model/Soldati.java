@@ -6,15 +6,13 @@ public class Soldati  extends  Army{
     String nume;
 
 
-    public Soldati( String nume) {
-        this.nume = nume;
+    public Soldati(String nume) {
+     this.nume=nume;
     }
 
     @Override
     public String toString() {
-        return "Soldati{" +
-                "nume='" + nume + '\'' +
-                '}';
+        return "Soldati : ";
     }
 
     @Override
